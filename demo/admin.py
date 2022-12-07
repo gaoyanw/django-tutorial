@@ -2,8 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 from django.contrib import admin
-from .models import Book
-from .models import BookNumber
+from .models import Book, BookNumber, Character
 # Register your models here.
 # admin.site.register(Book)
 # this is will register all books, not flexible to change
@@ -15,3 +14,4 @@ class BookAdmin(admin.ModelAdmin):
     search_fields = ['title', 'description']
 
 admin.site.register(BookNumber)
+admin.site.register(Character)

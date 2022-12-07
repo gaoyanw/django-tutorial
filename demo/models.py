@@ -5,6 +5,8 @@ from django.db import models
 class BookNumber(models.Model):
     isbn_10 = models.CharField(max_length=10, blank=True)
     isbn_13 = models.CharField(max_length=13, blank=True)
+
+
 class Book(models.Model):
     # a field will be a column in database
     title = models.CharField(max_length=36, blank=True, unique=True)
@@ -18,5 +20,9 @@ class Book(models.Model):
     # when print Book as a str, use title
     def __str__(self):
         return self.title
+class Character(models.Model):
+    name = models.CharField(max_length=30)
+    book = models.ForeignKey(Book, on_delete=models.CASCADE,
+                             related_name='characters')
 
 
