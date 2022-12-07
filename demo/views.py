@@ -8,3 +8,4 @@ class BookViewSet(viewsets.ModelViewSet):
     queryset = Book.objects.all()
     authentication_classes = (TokenAuthentication,) # there might be multiple classes
     permission_classes = (IsAuthenticated,)
+
