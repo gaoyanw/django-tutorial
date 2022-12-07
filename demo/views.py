@@ -4,8 +4,9 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views import View
 from .models import Book
+from django.shortcuts import  render
 def first(request):
-    return HttpResponse("frist message from views, hello world")
+    return render(request, 'first_template.html')
 
 # access db by Book.objects.,  can be all, filter or get
 class Another(View):
