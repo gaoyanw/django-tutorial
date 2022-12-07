@@ -6,7 +6,9 @@ from django.views import View
 from .models import Book
 from django.shortcuts import  render
 def first(request):
-    return render(request, 'first_template.html')
+    books = Book.objects.all()
+    # the books can be used in templates
+    return render(request, 'first_template.html', {'books': books})
 
 # access db by Book.objects.,  can be all, filter or get
 class Another(View):
