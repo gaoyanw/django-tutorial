@@ -10,3 +10,7 @@ class Book(models.Model):
     is_published = models.BooleanField(default=False)
     published = models.DateField(blank=True,  null=True, default=None)
     cover = models.FileField(upload_to='covers/', blank=True)
+
+    # when print Book as a str, use title
+    def __str__(self):
+        return self.title
